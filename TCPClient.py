@@ -1,5 +1,6 @@
 from socket import *
 import sys
+import tqdm
 #Constants
 SIZE = 8192
 FORMAT = "utf-8"
@@ -88,6 +89,8 @@ def main():
     returned_response = returned_response.split("\r")[0]
     #if response contains 200
     if("200" in returned_response):
+        FILESIZE = clientConnected.recv(1024).decode()
+        progress_bar = tqdm(range(FILESIZE), f"Receiving {the_file_path}", unit="B",unit_scale=True, unit_divisor=1000)
         #print the response to the terminal
         print(returned_response)
         #Initializes returned_file to an empty byte-string
@@ -99,6 +102,8 @@ def main():
             returned_file += file_received
             #Keeps receiving the file data until the while loop condition is broken
             file_received = clientConnected.recv(SIZE)
+            progress_bar.update(len(file_received))
+            
         #open file output
         with open("output", "wb") as output:
             #Writes the returned_file to output file
