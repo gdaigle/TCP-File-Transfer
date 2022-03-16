@@ -1,5 +1,5 @@
-<font size="16"> **Programming Assignment 1 HTTP Client/Server**<br><br><br></font>
-*Project Statement*<br>
+<font size="24">** Programming Assignment 1 HTTP Client/Server**<br><br><br></font>
+Project Statement<br>
 The program will transfer files from a server to the client(s) concurrently using TCP connection and threading.<br>
 Usage<br>
 In order to properly run this program you will need to run the server first with the port number you would like to use as the only argument<br>
