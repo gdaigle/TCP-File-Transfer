@@ -1,5 +1,5 @@
-**Programming Assignment 1 HTTP Client/Server**
-*Project Statement*
+**Programming Assignment 1 HTTP Client/Server**<br>
+*Project Statement*<br>
 The program will transfer files from a server to the client(s) 
 concurrently using TCP connection and threading.
 Usage
