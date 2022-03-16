@@ -4,7 +4,7 @@ Dr. Singh<br>
 CSCI 4345 Computer Networking<br>
 March 16, 2022<br>
 ## Project Statement<br>
-### The program will transfer files from a server to the client(s) concurrently using TCP connection and threading.<br>
+### The program will transfer files from a server to connected client(s) concurrently using TCP connection and threading.<br>
 ## Usage<br>
 ### Server:<br>
 In order to properly run this program you will need to run the server first with the port number you would like to use as the only argument<br>
