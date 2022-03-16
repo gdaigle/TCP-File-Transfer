@@ -1,4 +1,4 @@
-<font size="24">** Programming Assignment 1 HTTP Client/Server**<br><br><br></font>
+<font size="24"> **Programming Assignment 1 HTTP Client/Server**<br><br><br></font>
 Project Statement<br>
 The program will transfer files from a server to the client(s) concurrently using TCP connection and threading.<br>
 Usage<br>
