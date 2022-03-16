@@ -1,8 +1,8 @@
 # Programming Assignment 1 HTTP Client/Server<br>
-Grant Daigle
-Dr. Singh
-CSCI 4345 Computer Networking
-March 16, 2022
+Grant Daigle<br>
+Dr. Singh<br>
+CSCI 4345 Computer Networking<br>
+March 16, 2022<br>
 ## Project Statement<br>
 ### The program will transfer files from a server to the client(s) concurrently using TCP connection and threading.<br>
 ## Usage<br>
@@ -28,4 +28,5 @@ Once the GET request has been processed the server will check the filepath provi
 The server will either send the client<br>
 #### 1). http error 404 file not found
 #### 2). http 200 OK
-If the server sends the 200 OK response the server will also open the 
+If the server sends the 200 OK response the server will also open the file and read the file bytes and send the bytes to the client<br>
+The client will receive the bytes and write them to a file named output.
