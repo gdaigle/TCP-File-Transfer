@@ -2,7 +2,7 @@ from socket import *
 import os
 import sys
 import threading
-import tqdm
+from tqdm import tqdm
 #Constants
 FORMAT = "utf-8"
 SIZE = 8192
@@ -54,7 +54,7 @@ def connected_clients(connectionSocket, addr):
 
 def start_server():
     #if the command line argument does not equal 1
-    if(not sys.argv == 1):
+    if(not len(sys.argv) == 2):
         print("Usage: python3 TCPServer.py <port>")
         sys.exit(1)
     else:
