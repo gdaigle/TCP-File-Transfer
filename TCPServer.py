@@ -2,6 +2,7 @@ from socket import *
 import os
 import sys
 import threading
+import tqdm
 #Constants
 FORMAT = "utf-8"
 SIZE = 8192
@@ -18,8 +19,13 @@ def connected_clients(connectionSocket, addr):
             the_file_path = requests[1].replace("/", "", 1)
             #If the file path exists
             if(os.path.exists(the_file_path)):
+                FILESIZE = os.path.getsize(the_file_path)
                 #Send http response 200 OK to the client
                 connectionSocket.send("HTTP/1.1 200 OK\r\n\r\n".encode(FORMAT))
+                #Sends the file size to the client
+                connectionSocket.send(FILESIZE.encode(FORMAT))
+                #Sets up progress bar
+                progress_bar = tqdm(range(FILESIZE), f"Recieving {the_file_path}", unit="B",unit_scale=True, unit_divisor=1000)
                 #open the file path 
                 with open(the_file_path, "rb") as file:
                     #read the file and send to the client
@@ -30,6 +36,7 @@ def connected_clients(connectionSocket, addr):
                         else:
                             connectionSocket.sendall(read_file) 
                             read_file = file.read(SIZE)
+                            progress_bar.update(len(read_file))
             #If the file path does not exist
             elif(not os.path.exists(the_file_path)):
                 #Send http response 404 File Not Found to the client
