@@ -5,7 +5,7 @@ CSCI 4345 Computer Networking<br>
 March 16, 2022<br>
 ## Project Statement<br>
 ### The program will transfer files from a server to connected client(s) concurrently using TCP connection and threading.<br>
-## INSTALLATION<br>
+## Installation<br>
    You need python package tqdm before running for the progress bar<br>
    Type ```pip install tqdm``` into terminal/cmd
 ## Usage<br>
