@@ -1,11 +1,11 @@
 from socket import *
 import sys
-import tqdm
+from tqdm import tqdm
 #Constants
 SIZE = 8192
 FORMAT = "utf-8"
 #if the command line argument does not equal 1
-if(not sys.argv == 1):
+if(not len(sys.argv) == 2):
     #print usage statement
     print("Usage: python3 TCPClient.py http://ip[:port]/path/to/file")
     sys.exit(1)
@@ -90,7 +90,7 @@ def main():
     #if response contains 200
     if("200" in returned_response):
         FILESIZE = clientConnected.recv(1024).decode()
-        progress_bar = tqdm(range(FILESIZE), f"Receiving {the_file_path}", unit="B",unit_scale=True, unit_divisor=1000)
+        progress_bar = tqdm(range(FILESIZE), f"Receiving {path}", unit="B",unit_scale=True, unit_divisor=1000)
         #print the response to the terminal
         print(returned_response)
         #Initializes returned_file to an empty byte-string
