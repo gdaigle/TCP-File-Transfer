@@ -82,7 +82,7 @@ def main():
     send_request = f"GET {path} HTTP/1.1\r\n\r\n"
     #Send http GET request for file 
     clientConnected.send(send_request.encode(FORMAT))
-    #Recieve response and initialize to variable returned_response
+    #Receive response and initialize to variable returned_response
     returned_response = clientConnected.recv(1024).decode()
     #Remove the escape characters from the variable
     returned_response = returned_response.split("\r")[0]
