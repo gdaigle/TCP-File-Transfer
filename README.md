@@ -1,7 +1,7 @@
-#Programming Assignment 1 HTTP Client/Server
-#Project Statement
-The program will transfer files from a server to the client(s) concurrently using TCP connection and threading.
-
+**Programming Assignment 1 HTTP Client/Server**
+*Project Statement*
+The program will transfer files from a server to the client(s) 
+concurrently using TCP connection and threading.
 Usage
 In order to properly run this program you will need to run the server first with the port number you would like to use as the only argument
 (i.e) python3 TCPServer.py 8000 #This will run the server on port 8000
